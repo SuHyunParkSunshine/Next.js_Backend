@@ -1,6 +1,7 @@
 import { connectDB } from "@/util/database"
 import Link from "next/link"
 import DetailLink from "./DetailLink"
+import ListItem from "./ListItem"
 
 export default async function List() {
 
@@ -9,18 +10,7 @@ export default async function List() {
 
     return (
         <div className="list-bg">
-            {
-                result.map((item, i) =>  // return() + 중괄호 동시에 생략 가능                    
-                    <div className="list-item" key={i}>
-                        <Link href={`/detail/${result[i]._id}`}>
-                            <h4>{result[i].title}</h4>
-                        </Link>
-                        {/* <DetailLink /> */}
-                        <Link href={'/edit/' + result[i]._id}>✏️</Link>
-                        <p>1월 1일</p>
-                    </div>
-                )
-            }
+            <ListItem result={result} />
         </div>
     )
 }
