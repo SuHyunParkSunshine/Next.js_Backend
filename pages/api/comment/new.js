@@ -11,7 +11,7 @@ export default async function handler(request, response) {
 
         let newComment = {
             content : request.body.comment,
-            partent : new ObjectId(request.body.parentId),
+            parent : new ObjectId(request.body.parentId),
             author : session.user.email
         }
 
