@@ -66,8 +66,8 @@ export const authOptions = {
         },
     },
 
-    // secret : process.env.NEXTAUTH_SECRET,
-    secret : 'qwer1234',
+    secret : process.env.NEXTAUTH_SECRET,
+    // secret : 'qwer1234',
     adapter : MongoDBAdapter(connectDB) // DB Adapter 사용
 };
 export default nextAuth(authOptions)
